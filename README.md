@@ -40,5 +40,35 @@ This simple application in Spring Boot comes with the following pre-configured d
 - EXTRA: para configurar una conexion a una base de datos MySQL se debe configurar el archivo -> application.properties
 
 ## POSTMAN
-- La llave primaria es el email por ser un valor unico, para el metodo PUT, GET, DELETE de un solo usuario se usa el correo
-        EJEMPLO:  {PUT} [http://localhost:8080/api/usuarios/albianjose@gmail.com]
+- La llave primaria es el email por ser un valor unico, para el metodo PUT, GET, DELETE se envia un RequestBody mediante el correo en la URL
+        EJEMPLO:  
+  - PARA EL METODO: {POST} [http://localhost:8080/api/usuarios]
+                      AGREGAMOS UN JSON:  {
+                                            "name": "Juan Rodriguez",
+                                            "email": "juan@rodriguez.org",
+                                            "password": "Hunter270$",
+                                            "phones": [
+                                                         {
+                                                        "number": "1234567",
+                                                        "citycode": "1",
+                                                        "contrycode": "57"
+                                                }
+                                            ]
+                                        }
+ 
+- PARA EL METODO: {PUT} [http://localhost:8080/api/usuarios/juan@rodriguez.org]
+  - AGREGAMOS EL JSON CON LA INFORMACION MODIFICADA: {
+                                                        "name": "Albian Perez",
+                                                        "email": "juan@rodriguez.org",
+                                                        "password": "Aass70554487$",
+                                                        "isactive": 1,
+                                                        "phones": [
+                                                                    {
+                                                                    "number": "1112343",
+                                                                    "citycode": "2",
+                                                                    "contrycode": "20"
+                                                                    }
+                                                             ]
+                                                        }
+- PARA EL METODO: {GET} [http://localhost:8080/api/usuarios],  este nos regresa todos los usuarios en la tabla.
+- PARA EL METODO: {DELETE} [http://localhost:8080/api/usuarios/juan@rodriguez.org], seleccionamos el email que deseamos eliminar.
