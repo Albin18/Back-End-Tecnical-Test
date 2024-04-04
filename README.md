@@ -43,7 +43,7 @@ This simple application in Spring Boot comes with the following pre-configured d
 - La llave primaria es el email por ser un valor unico, para el metodo PUT, GET, DELETE se envia un RequestBody mediante el correo en la URL
         EJEMPLO:  
   - PARA EL METODO: {POST} [http://localhost:8080/api/usuarios]
-                      AGREGAMOS UN JSON:  {
+                      AGREGAMOS UN BODY REQUEST:  {
                                             "name": "Juan Rodriguez",
                                             "email": "juan@rodriguez.org",
                                             "password": "Hunter270$",
@@ -57,7 +57,7 @@ This simple application in Spring Boot comes with the following pre-configured d
                                         }
  
 - PARA EL METODO: {PUT} [http://localhost:8080/api/usuarios/juan@rodriguez.org]
-  - AGREGAMOS EL JSON CON LA INFORMACION MODIFICADA: {
+  - AGREGAMOS EL BODY REQUEST CON LA INFORMACION MODIFICADA: {
                                                         "name": "Albian Perez",
                                                         "email": "juan@rodriguez.org",
                                                         "password": "Aass70554487$",
